@@ -18,19 +18,32 @@ export class DrugService {
     return await newDrug.save();
   }
 
-  findAll() {
-    return `This action returns all drug`;
+  async findAll(): Promise<DrugEntity[]> {
+    // manufacturer: string
+    return await this.drugDB
+      // .find({ manufacturer: manufacturer })
+      .find()
+      .exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} drug`;
+  async findOne(id: string): Promise<DrugEntity> {
+    return await this.drugDB.findById(id).exec();
   }
 
-  update(id: number, updateDrugDto: UpdateDrugDto) {
-    return `This action updates a #${id} drug`;
+  async update(id: string, updateDrugDto: UpdateDrugDto): Promise<DrugEntity> {
+    return await this.drugDB
+      .findByIdAndUpdate(id, updateDrugDto, {
+        upsert: true,
+        new: true,
+      })
+      .exec();
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} drug`;
+  async remove(id: string): Promise<DrugEntity> {
+    return await this.drugDB.findByIdAndDelete(id);
+  }
+
+  async findAllByManufacturer(manufacturer: string): Promise<DrugEntity[]> {
+    return await this.drugDB.find({ manufacturer: manufacturer }).exec();
   }
 }

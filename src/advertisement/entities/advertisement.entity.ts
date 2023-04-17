@@ -13,6 +13,9 @@ export class AdvertisementEntity {
   @Prop({ type: () => String })
   shortDescription: string;
 
+  @Prop({ type: () => String })
+  image: string;
+
   // TODO: Add Image Later
 
   // @Prop({ type: () => Date, required: true })

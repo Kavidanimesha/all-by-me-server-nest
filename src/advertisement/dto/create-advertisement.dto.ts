@@ -11,6 +11,9 @@ export class CreateAdvertisementDto {
   @MaxLength(255)
   readonly shortDescription: string;
 
+  @IsString()
+  readonly image: string;
+
   // Date Validation Here
   // readonly adEndsIn: string;
 }
