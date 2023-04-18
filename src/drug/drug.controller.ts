@@ -20,13 +20,6 @@ export class DrugController {
     return this.drugService.create(createDrugDto);
   }
 
-  // Query param www.google.com/hello?price=560&type=2
-  // Path param www.google.com/hello
-  // @Get()
-  // getDrugsByPrice(@Query("price") price: number) {
-  //   return this.drugService.drugsByPrice(price);
-  // }
-
   @Get()
   findAll() {
     return this.drugService.findAll();

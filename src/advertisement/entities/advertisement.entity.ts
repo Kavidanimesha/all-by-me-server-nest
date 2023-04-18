@@ -7,13 +7,16 @@ export type AdvertisementDocument = AdvertisementEntity & Document;
 export class AdvertisementEntity {
   _id: ObjectId;
 
-  @Prop({ required: true, type: () => String, unique: true })
+  @Prop({ required: true, type: () => String })
   headline: string;
 
   @Prop({ type: () => String })
   shortDescription: string;
 
   @Prop({ type: () => String })
+  category: string;
+
+  @Prop({ type: () => String, unique: true })
   image: string;
 
   // TODO: Add Image Later

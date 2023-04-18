@@ -12,6 +12,9 @@ export class CreateAdvertisementDto {
   readonly shortDescription: string;
 
   @IsString()
+  readonly category: string;
+
+  @IsString()
   readonly image: string;
 
   // Date Validation Here
