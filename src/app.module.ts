@@ -10,6 +10,8 @@ import { PrescriptionModule } from './prescription/prescription.module';
 import { Pharmacy_cardModule } from './pharmacy_card/pharmacy_card.module';
 import { ChannelModule } from './channel/channel.module';
 import { DeliveryModule } from './delivery/delivery.module';
+import { RecordsModule } from './records/records.module';
+import { ChartModule } from './chart/chart.module';
 
 @Module({
   imports: [
@@ -22,6 +24,8 @@ import { DeliveryModule } from './delivery/delivery.module';
     Pharmacy_cardModule,
     ChannelModule,
     DeliveryModule,
+    RecordsModule,
+    ChartModule,
   ],
   controllers: [AppController],
   providers: [AppService],
